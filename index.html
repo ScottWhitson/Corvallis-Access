@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--meta data for sharing links on Facebook-->
-    <meta property="og:title" content="Pedestrian Accessibility in Corvallis, OR" />
-    <meta property="og:url" content="http://cdn.rawgit.com/ScottWhitson/Corvallis-Access/master/index.html" />
+    <meta property="og:title" content="Pedestrian Accessibility in Corvallis, OR"/>
+    <meta property="og:url" content="http://rawgit.com/ScottWhitson/Corvallis-Access/master/index.html"/>
     <meta property="og:description" content="This is my Geog-371 final" />
-    <meta property="og:image" content="img/webmap.png" />
+    <meta property="og:image" content="http://rawgit.com/ScottWhitson/Corvallis-Access/master/img/webmap.png"/>
 
     <!--add required stylesheets-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
@@ -41,7 +41,7 @@
 <body>
 <header>
     <div class="wrapper">
-        <h1> Scott Whitson | whitsons@oregonstate.edu | CEOAS <img src="img/OrangeLogo.png" width="175px" height="35px" align="right">
+        <h1> Scott Whitson | whitsons@oregonstate.edu | CEOAS <img src="img/OrangeLogo.png" width="175px" align="right">
         </h1>
         <h2>
             Pedestrian Accessibility in Corvallis, Oregon
@@ -52,9 +52,6 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-12 main">
-            <div class="slogan-area">
-
-            </div>
 
             <section data-scene="scene1">
                 <h3>Network Analysis Of Corvallis Sidewalks</h3>
@@ -76,7 +73,7 @@
 
             </section>
 
-            <section data-scene="scene2">
+            <section data-scene="scene3">
                 <h3>How well are you able to see while walking in Corvallis after dark?</h3>
                 <br>
                 <p>Adding streetlights from the City of Corvallis and running a kernal density determined the brightness of Corvallis after dark.</p>
@@ -92,7 +89,7 @@
 
 </div>
 <!--facebook icon-->
-<a class="fa fa-facebook-square btn" href="https://facebook.com/sharer.php?u=http://cdn.rawgit.com/ScottWhitson/Corvallis-Access/master/index.html" target="_blank"></a>
+<a class="fa fa-facebook-square btn" href="https://facebook.com/sharer.php?u=http://rawgit.com/ScottWhitson/Corvallis-Access/master/index.html" target="_blank"></a>
 <!--info icon-->
 <i class="fa fa-info-circle btn" style="top:80px" data-toggle="modal" data-target="#info-modal"></i>
 
@@ -122,19 +119,19 @@
     var layers = {
         'layer 1': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {id: 'mapbox.dark'}), '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'],
         'layer 2': [ L.geoJson.ajax('http://www.mapio.us/geoserver/ceoas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ceoas:admin&outputFormat=application%2Fjson', {color: '#ff6b2a', weight: 3}), '<i style="background: #ff6b2a; opacity: 1"></i><p><b>legend 2</b></p>'],
-        'sidewalks': [ L.geoJson.ajax('assets/sidewalks_web.geojson',  {
+        'sidewalks': [ L.geoJson.ajax('assets/sidewalks.geojson',  {
             color: '#ff6b2a',
             weight: 4,
             opacity: 0.3})],
-        //Add small markers
-        'streetlights': [ L.geoJson.ajax('assets/streetlights_web.geojson',  {
+
+        'streetlights': [ L.geoJson.ajax('assets/streetlights.geojson',  {
             color: '#ff3',
             weight: 2
-          })],
+        })],
         //Add onEachFeature for markers if this won't display points
-        'service': [ L.geoJson.ajax('assets/service_web.geojson',  {
+        'service': [ L.geoJson.ajax('assets/service.geojson',  {
             color: '#ff6b2a'
-            })]
+        })]
 
     };
 
